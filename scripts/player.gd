@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 120.0
 const JUMP_VELOCITY = -300.0
 
+@onready var attack: Area2D = $attack
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_script = $attack  # Reference attack script
 
@@ -29,12 +30,13 @@ func handle_movement():
 
 	# Get movement direction
 	var direction := Input.get_axis("move_left", "move_right")
-
 	# Set sprite direction
 	if direction > 0:
 		animated_sprite.flip_h = false
+		attack.scale.x = 1
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		attack.scale.x = -1
 	
 	# Play movement animations
 	if is_on_floor():

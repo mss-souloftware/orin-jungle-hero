@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgxaou7kmwby4"]
+
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_1ecda"]
+[ext_resource type="Texture2D" uid="uid://cjc7p44svic2k" path="res://background/Background.png" id="1_ojc5x"]
+
+[node name="start_screen" type="Control"]
+layout_mode = 3
+anchor_right = 0.418
+anchor_bottom = 0.42
+offset_right = -0.536011
+offset_bottom = -0.160004
+script = ExtResource("1_1ecda")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.401
+anchor_bottom = 2.39
+offset_right = 12.119
+offset_bottom = 4.91998
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ojc5x")
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.439
+anchor_bottom = 2.144
+offset_left = 427.0
+offset_top = 245.0
+offset_right = -504.159
+offset_bottom = -256.168
+text = "Start"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.439
+anchor_bottom = 2.144
+offset_left = 442.0
+offset_top = 373.0
+offset_right = -504.159
+offset_bottom = -137.168
+text = "Quit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
